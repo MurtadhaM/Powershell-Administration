@@ -1,27 +1,19 @@
 <# This is the Cat class and it inherets from Animal class#>
 
 
-import-module ./Animal.ps1
 
+ class Cat : Animal {
 
-class Cat : Animal {
-    [string]$color
-    [string]$breed
-    
+    # Properties
+    [string]$Color
+    [string]$Pattern
 
-    [void]setColor([string]$color){
-        $this.color = $color
+    # Constructor
+    Cat([string]$name, [string]$habitat, [string]$sound, [int]$population, [string]$Color, [string]$Pattern) : base($name, $habitat, $sound, $population) {
+        $this.Pattern = $Pattern
+        $this.Color = $Color
     }
-    
-    [string]getColor(){
-        return $this.color
-    }
-    
-    [void]setBreed([string]$breed){
-        $this.breed = $breed
-    }
-    
-    [string]getBreed(){
-        return $this.breed
-    }
+
+  
 }
+     
