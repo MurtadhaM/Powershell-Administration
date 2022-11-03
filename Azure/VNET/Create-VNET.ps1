@@ -5,7 +5,7 @@
 
 
 $DefaultRegion = "eastus2"
-$DefaultResourceGroup = "SnakeVNET-rg"
+$ResourceGroupNameqq = "SnakeVNET-rg"
 $DefaultVNETName = "SnakeVNET"
 $DefaultSubnet1Name = "SnakeSubnet_Local"
 $DefaultSubnet2Name = "SnakeSubnet_Remote"
@@ -23,7 +23,7 @@ New-AzVirtualNetwork -Name $DefaultVNETName -ResourceGroupName $DefaultResourceG
 
 <#-----   INTERACTIVE  ------#>
 $ResourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$VNETName = Read-Host -Prompt "Enter the VNET Name"
+$Param.$VNETName = Read-Host -Prompt "Enter the VNET Name"
 $Location = Read-Host -Prompt "Location of the Network (Default: East US)"
 $SuperNetAddressPrefix = Read-Host -Prompt "Enter the Supernet (MUST INCLUDE THE TWO) CIDR (Default: 10.0.0.0/16)"
 $Subnet1Name = Read-Host -Prompt "Enter the First Subnet Name"
