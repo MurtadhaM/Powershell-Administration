@@ -27,12 +27,11 @@ function Export-ResourceGroup{
 
     }
 
-    #Convert the powershell script to a JSON file
-    Export-AzResourceGroup  -ResourceGroupName "SnakeStorage-rg" 
+    #Print the Content of the folder
+    Get-ChildItem -Path $Templates_Directory
     
 }
 
 
-
-#Export the JSON file to the folder
-Export-AzResourceGroup  -ResourceGroupName "SnakeStorage-rg" -Path ($PWD+"\\Templates\\$CurrentDate.json") -Force
+#execute the function   
+Export-ResourceGroup
