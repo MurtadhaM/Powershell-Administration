@@ -6,45 +6,50 @@
             "value": "RouteBased"
         },
         "localGatewayName": {
-            "value": "Azure-LocalGateway"
+            "value": "localGateway"
         },
         "localGatewayIpAddress": {
-            "value": "52.173.109.64" // Public IP address of the on-premises VPN device
+            "value": "52.173.109.64"
         },
         "localAddressPrefix": {
-            "value": "10.0.1.0/16" // Supernet of on-premises networks
+            "value": [
+              "192.168.0.0/16",
+              "172.16.0.0/12",
+              "10.0.1.0/24"
+            ]
         },
         "virtualNetworkName": {
-            "value": "SnakeVNetSite-to-Site"
+            "value": "azureVnet"
         },
         "azureVNetAddressPrefix": {
-            "value": "192.168.0.0/16"
+            "value": "10.0.0.0/16"
         },
         "subnetName": {
-            "value": "SnakeAzureVMSubnet"
+            "value": "SnakeLocalSubnet"
         },
         "subnetPrefix": {
-            "value": "192.168.0.0/24"
+            "value": "10.0.100.0/24"
         },
         "gatewaySubnetPrefix": {
-            "value": "172.16.100.0/24"
+            "value": "10.0.200.0/29"
         },
         "gatewayPublicIPName": {
-            "value": "Snae_VPNGatewayIP"
+            "value": "azureGatewayIP"
         },
         "gatewayName": {
-            "value": "Snake_VPNGateway"
+            "value": "azureGateway"
+        },
+        "gatewaySku": {
+            "value": "Basic"
         },
         "connectionName": {
-            "value": "Site-To-Site"
+            "value": "Azure2Other"
         },
         "sharedKey": {
             "value": "p@ssW0rd123" 
-        }
-        ,
-        "Location": {
-            "defaultValue": "eastus",
-            "value": "eastus2"
+        },
+        "location": {
+            "value": "eastus2" 
         }
     }
 }
