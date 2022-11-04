@@ -5,6 +5,17 @@ Author: Murtadha Marzouq
 Function: A test program for implementing prototypes for future projects
 #>
  
+<# --WINDOWS #>
+
+# Download Tool:
+
+Write-Host -Messsage "winget install JanDeDobbeleer.OhMyPosh -s winget" -ForegroundColor Yellow
+<#-- Mac OS X #>
+Write-Host -Messsage "brew install jandedobbeleer/oh-my-posh/oh-my-posh" -ForegroundColor Magenta
+
+<#-- Linux #>
+Write-Host -Messsage "brew install jandedobbeleer/oh-my-posh/oh-my-posh" -ForegroundColor Red
+
 
 
 <#
@@ -99,20 +110,9 @@ function welcome_prompt{
 
 }
 
-function prompt {
-   
-  $current_User =  $env:USER
-  $currentComputer= $env:USERNAME
-  
-  Write-host  $current_User  + " on " + $currentComputer
-   $pathvariable = $env:pwd
-  return $pathvariable+ "PS> "
 
 
-}
-
-
-function prompt_fancy{
+function prompt{
 
 
   if (((Get-Item $pwd).parent.parent.name)) {
@@ -127,17 +127,27 @@ function prompt_fancy{
  #>
 if($Script:IsAdmin) {
     Write-Host " $([char]0xE0A2)" -ForegroundColor Black -BackgroundColor Green -NoNewline
-    Write-Host "$([char]0xE0B0)$([char]0xE0B1)" -ForegroundColor Green -BackgroundColor DarkBlue -NoNewline
+    Write-Host "$([char]0xE0B0)$([char]0xE0B1)" -ForegroundColor Green -BackgroundColor Red -NoNewline
 }
 
-Write-Host " $($MyInvocation.HistoryId)" -ForegroundColor white -BackgroundColor DarkBlue -NoNewline
-Write-Host "$([char]0xE0B0)$([char]0xE0B1) " -ForegroundColor DarkBlue -BackgroundColor Cyan -NoNewline
-Write-Host ($path).ToLower().TrimEnd('\') -ForegroundColor White -BackgroundColor Cyan -NoNewline
+Write-Host " $($MyInvocation.HistoryId)" -ForegroundColor white -BackgroundColor Red -NoNewline
+Write-Host "$([char]0xE0B0)$([char]0xE0B1) " -ForegroundColor Red -BackgroundColor Yellow -NoNewline
+Write-Host ($path).ToLower().TrimEnd('\') -ForegroundColor White -BackgroundColor Yellow -NoNewline
 if ((Write-VcsStatus *>&1).Length -gt 0) {
-    Write-Host "$([char]0xE0B0)$([char]0xE0B1)" -ForegroundColor Cyan -BackgroundColor DarkGray -NoNewline
-    Write-Host "$([char]0xE0B0)$("$([char]0xE0B1)" * $NestedPromptLevel)" -ForegroundColor DarkGray -NoNewline
+    Write-Host "$([char]0xE0B0)$([char]0xE0B1)" -ForegroundColor Yellow -BackgroundColor Green -NoNewline
+    Write-Host "$([char]0xE0B0)$("$([char]0xE0B1)" * $NestedPromptLevel)" -ForegroundColor Green -NoNewline
 } else {
-    Write-Host "$([char]0xE0B0)$("$([char]0xE0B1)" * $NestedPromptLevel)" -ForegroundColor Cyan -NoNewline
+    Write-Host "$([char]0xE0B0)$("$([char]0xE0B1)" * $NestedPromptLevel)" -ForegroundColor Yellow -NoNewline
 }
 
 }
+
+
+
+
+Write-Host -Messsage "winget install JanDeDobbeleer.OhMyPosh -s winget" -ForegroundColor Yellow
+<#-- Mac OS X #>
+Write-Host -Messsage "brew install jandedobbeleer/oh-my-posh/oh-my-posh" -ForegroundColor Magenta
+
+<#-- Linux #>
+Write-Host -Messsage "brew install jandedobbeleer/oh-my-posh/oh-my-posh" -ForegroundColor Red
