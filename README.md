@@ -8,7 +8,7 @@ Welcome to Murtadha's Bag of tricks for PowerShell. I am a PowerShell enthusiast
 ## Windows PowerShell vs. PowerShell Core
 
 
-| Windows PowerShell | PowerShell Core |
+| 👀  Windows PowerShell  👀 |  👀 PowerShell Core  👀 |
 |:------------------:|:---------------:|
 | ![Windows PowerShell][] | ![PowerShell Core][] |
 source:
