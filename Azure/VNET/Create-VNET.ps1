@@ -60,3 +60,4 @@ New-AzVirtualNetwork -Name $VNETName -ResourceGroupName $ResourceGroupName -Loca
 
 
 
+
